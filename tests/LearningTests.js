@@ -43,3 +43,7 @@ test('Moving slider', async t => {
     .dragToElement(sliderHandle, sliderTick.withText('7'))
     .expect(sliderHandle.offsetLeft).gt(initialOffset);
 })
+
+test('', async t => {
+  
+})
