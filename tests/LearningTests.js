@@ -34,3 +34,12 @@ test('Input Preffered OS', async t => {
     .click(windowsRadioButton)
     .click(triedTestCafeCheckbox);
 })
+
+test('Moving slider', async t => {
+  const initialOffset = await sliderHandle.offsetLeft;
+
+  await t
+    .click(triedTestCafeCheckbox)
+    .dragToElement(sliderHandle, sliderTick.withText('7'))
+    .expect(sliderHandle.offsetLeft).gt(initialOffset);
+})
