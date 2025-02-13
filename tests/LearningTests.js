@@ -51,3 +51,8 @@ test('Type comments', async t => {
     .wait(500)
     .expect(commentsTextArea.value).eql('Selectors are great')
 })
+
+test('', async t => {
+  await t
+    
+})
