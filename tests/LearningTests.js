@@ -44,6 +44,10 @@ test('Moving slider', async t => {
     .expect(sliderHandle.offsetLeft).gt(initialOffset);
 })
 
-test('', async t => {
-  
+test('Type comments', async t => {
+  await t
+    .click(triedTestCafeCheckbox)
+    .typeText(commentsTextArea, 'Selectors are great')
+    .wait(500)
+    .expect(commentsTextArea.value).eql('Selectors are great')
 })
