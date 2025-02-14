@@ -52,7 +52,17 @@ test('Type comments', async t => {
     .expect(commentsTextArea.value).eql('Selectors are great')
 })
 
-test('', async t => {
+test('All features', async t => {
+  const initialOffset = await sliderHandle.offsetLeft;
+
   await t
-    
+    .typeText(nameInput, 'Charles')
+    .click(windowsRadioButton)
+    .click(triedTestCafeCheckbox)
+    .dragToElement(sliderHandle, sliderTick.withText('7'))
+    .typeText(commentsTextArea, 'Selectors are great')
+    .wait(500)
+    .expect(commentsTextArea.value).eql('Selectors are great')
+    .expect(sliderHandle.offsetLeft).gt(initialOffset)
+    .expect(nameInput.value).eql('Charles');
 })
